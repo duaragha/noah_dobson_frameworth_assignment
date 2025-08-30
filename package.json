@@ -1,0 +1,12 @@
+{
+  "name": "seranthony-signing",
+  "version": "1.0.0",
+  "description": "Seranthony Dominguez Public Signing - Shopify Template",
+  "scripts": {
+    "dev": "npx serve -p 3000",
+    "preview": "npx http-server -p 3000 -o"
+  },
+  "keywords": ["shopify", "liquid", "ecommerce"],
+  "author": "",
+  "license": "ISC"
+}
