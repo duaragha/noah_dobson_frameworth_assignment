@@ -1,0 +1,1 @@
+- okay lets make an index.html so i can keep on viewing what i work on. everytime you make edits, you will update the 3 files: noah_dobson.liquid, noah_dobson-signing.js and index.html okay

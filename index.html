@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seranthony Dominguez Public Signing - Frameworth</title>
-</head>
-<body>
-  <!-- Note: This is the HTML preview version. The actual Liquid template is in seranthony-signing.liquid -->
-  <!-- Since Liquid tags won't work in regular HTML, I'm creating an HTML version for preview -->
+  <title>Noah Dobson Public Signing - Frameworth</title>
   
 <style>
   * {
@@ -28,91 +24,115 @@
     padding: 0 20px;
   }
 
-  /* Header Styles */
-  .announcement-bar {
-    background: #000;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .header {
-    background: #fff;
-    border-bottom: 1px solid #e5e5e5;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-  }
-
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
-  }
-
-  .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-  }
-
-  .nav-menu a {
-    color: #333;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
-  }
-
-  .nav-menu a:hover {
-    color: #ff4444;
-  }
-
-  .header-actions {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-
-  .cart-btn {
-    position: relative;
-    cursor: pointer;
-  }
-
-  .cart-count {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: #ff4444;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-  }
 
   /* Hero Section */
   .hero-section {
-    background: url('images/website.jpg') center center/contain;
-    background-repeat: no-repeat;
-    background-color: #f5f5f5;
     position: relative;
-    min-height: 600px;
-    padding: 40px 0;
+    background-color: #f5f5f5;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 40px 20px;
+  }
+
+  /* Hero Image Container */
+  .hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Gradient Overlay */
+  .hero-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(220, 38, 38, 0.15) 100%);
+    pointer-events: none;
+  }
+
+  /* Hero Buttons Container */
+  .hero-buttons {
+    position: absolute;
+    bottom: 30px;
+    right: 15%;
+    width: auto;
+    max-width: 450px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  .hero-btn {
+    flex: 1;
+    padding: 10px 16px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .hero-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  @media (max-width: 1024px) {
+    .hero-buttons {
+      width: 60%;
+      right: 5%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-buttons {
+      width: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      right: auto;
+      bottom: 20px;
+      gap: 10px;
+    }
+    
+    .hero-btn {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-buttons {
+      flex-direction: column;
+      width: 85%;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 15px;
+      gap: 8px;
+    }
+    
+    .hero-btn {
+      font-size: 11px;
+      padding: 8px 10px;
+    }
   }
 
   .hero-content h1 {
@@ -146,50 +166,6 @@
     height: 24px;
   }
 
-  /* Filter Section */
-  .filter-section {
-    padding: 40px 0;
-    border-bottom: 1px solid #e5e5e5;
-  }
-
-  .filter-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .filter-tabs {
-    display: flex;
-    gap: 20px;
-  }
-
-  .filter-tab {
-    padding: 10px 20px;
-    background: transparent;
-    border: 2px solid #e5e5e5;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: 14px;
-  }
-
-  .filter-tab.active {
-    background: #000;
-    color: white;
-    border-color: #000;
-  }
-
-  .filter-tab:hover {
-    border-color: #000;
-  }
-
-  .sort-dropdown {
-    padding: 10px 15px;
-    border: 1px solid #e5e5e5;
-    border-radius: 5px;
-    background: white;
-    cursor: pointer;
-  }
 
   /* Product Grid */
   .products-section {
@@ -198,9 +174,18 @@
 
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(350px, 400px));
     gap: 30px;
     margin-top: 40px;
+    justify-content: center;
+  }
+
+  .send-in-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(350px, 400px));
+    gap: 30px;
+    margin-top: 40px;
+    justify-content: center;
   }
 
   .product-card {
@@ -216,12 +201,39 @@
     transform: translateY(-5px);
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
   }
+  
+  .product-card:hover .product-title {
+    color: #1e40af !important;
+  }
 
   .product-image {
     width: 100%;
-    height: 350px;
-    object-fit: cover;
-    background: #f5f5f5;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Bullet List Styles */
+  .product-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .product-features li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .product-features li::before {
+    content: '✓';
+    color: #22c55e;
+    font-weight: bold;
+    margin-right: 8px;
+    font-size: 16px;
   }
 
   .product-badge {
@@ -304,152 +316,9 @@
     color: white;
   }
 
-  /* Mobile Menu */
-  .mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    cursor: pointer;
-  }
-
-  .mobile-menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background: #333;
-  }
-
-  /* Cart Drawer */
-  .cart-drawer {
-    position: fixed;
-    right: -400px;
-    top: 0;
-    width: 400px;
-    height: 100vh;
-    background: white;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-    transition: right 0.3s;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .cart-drawer.open {
-    right: 0;
-  }
-
-  .cart-header {
-    padding: 20px;
-    border-bottom: 1px solid #e5e5e5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .cart-close {
-    cursor: pointer;
-    font-size: 24px;
-  }
-
-  .cart-items {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-  }
-
-  .cart-item {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e5e5e5;
-  }
-
-  .cart-item img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-
-  .cart-item-info {
-    flex: 1;
-  }
-
-  .cart-item-title {
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-
-  .cart-item-price {
-    color: #666;
-    margin-bottom: 10px;
-  }
-
-  .cart-item-quantity {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .quantity-btn {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #e5e5e5;
-    background: white;
-    cursor: pointer;
-  }
-
-  .cart-footer {
-    padding: 20px;
-    border-top: 1px solid #e5e5e5;
-  }
-
-  .cart-total {
-    display: flex;
-    justify-content: space-between;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-
-  .checkout-btn {
-    width: 100%;
-    padding: 15px;
-    background: #000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-
-  /* Overlay */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 999;
-    display: none;
-  }
-
-  .overlay.show {
-    display: block;
-  }
 
   /* Responsive Design */
   @media (max-width: 768px) {
-    .nav-menu {
-      display: none;
-    }
-
-    .mobile-menu-toggle {
-      display: flex;
-    }
-
     .hero-content h1 {
       font-size: 32px;
     }
@@ -459,23 +328,13 @@
     }
 
     .products-grid {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
 
-    .cart-drawer {
-      width: 100%;
-      right: -100%;
-    }
-
-    .filter-content {
-      flex-direction: column;
+    .send-in-grid {
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-    }
-
-    .filter-tabs {
-      overflow-x: auto;
-      width: 100%;
     }
   }
 
@@ -483,106 +342,147 @@
     .products-grid {
       grid-template-columns: 1fr;
     }
+
+    .send-in-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  /* Navigation Menu */
+  .navigation-menu {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px 0;
+  }
+
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 10px;
+  }
+
+  .nav-links a:hover {
+    color: #dc2626;
+  }
+
+  /* Mobile Hero Image */
+  .hero-image-mobile {
+    display: none;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .hero-image {
+      display: none;
+    }
+    
+    .hero-image-mobile {
+      display: block;
+    }
+
+    .nav-links {
+      gap: 20px;
+      font-size: 14px;
+      flex-wrap: wrap;
+    }
   }
 </style>
-
-<!-- Announcement Bar -->
-<div class="announcement-bar">
-  <p>🎉 LIMITED TIME: Exclusive Signing Event with Seranthony Dominguez! 🎉</p>
-</div>
-
-<!-- Header -->
-<header class="header">
-  <div class="container">
-    <div class="header-content">
-      <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      
-      <a href="/" class="logo">FRAMEWORTH</a>
-      
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#signings">Signings</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      
-      <div class="header-actions">
-        <div class="search-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.35-4.35"></path>
-          </svg>
-        </div>
-        <div class="cart-btn" onclick="toggleCart()">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 2 3 9v13h18V9l-6-7z"></path>
-            <path d="M3 9h18"></path>
-            <path d="M9 22V9"></path>
-            <path d="M15 22V9"></path>
-          </svg>
-          <span class="cart-count" id="cartCount">0</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
+</head>
+<body>
 
 <!-- Hero Section -->
 <section class="hero-section">
-  <!-- Image displayed as background -->
-</section>
-
-<!-- Filter Section -->
-<section class="filter-section">
-  <div class="container">
-    <div class="filter-content">
-      <div class="filter-tabs">
-        <button class="filter-tab active" onclick="filterProducts('all')">All Products</button>
-        <button class="filter-tab" onclick="filterProducts('meet-greet')">Meet & Greet</button>
-        <button class="filter-tab" onclick="filterProducts('send-in')">Send In Items</button>
-        <button class="filter-tab" onclick="filterProducts('inscription')">Inscriptions</button>
-      </div>
-      
-      <select class="sort-dropdown" onchange="sortProducts(this.value)">
-        <option value="featured">Featured</option>
-        <option value="price-low">Price: Low to High</option>
-        <option value="price-high">Price: High to Low</option>
-        <option value="newest">Newest First</option>
-      </select>
+  <div class="hero-image-container">
+    <img src="images/Website.jpg" alt="Noah Dobson Public Signing" class="hero-image">
+    <img src="images/mobile-square.jpg" alt="Noah Dobson Public Signing Mobile" class="hero-image-mobile">
+    <div class="hero-gradient"></div>
+    <div class="hero-buttons">
+      <button class="hero-btn" onclick="window.open('https://sportcardexpomontreal.com/en/tickets/', '_blank')">Buy Tickets on ExpoCard</button>
+      <button class="hero-btn" onclick="window.location.href='#send-in'">Send-In Your Item</button>
     </div>
   </div>
 </section>
 
+<!-- Navigation Menu -->
+<nav class="navigation-menu">
+  <div class="nav-container">
+    <ul class="nav-links">
+      <li><a href="#tickets">Tickets</a></li>
+      <li><a href="#send-in">Send-Ins</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#terms">Terms</a></li>
+    </ul>
+  </div>
+</nav>
+
 <!-- Products Section -->
-<section class="products-section">
+<section class="products-section" id="tickets">
   <div class="container">
-    <h2 style="font-size: 32px; margin-bottom: 10px; text-align: center;">Available Signing Options</h2>
+    <h2 style="font-size: 32px; margin-bottom: 10px; text-align: center;">Available Ticket Bundles</h2>
     <p style="text-align: center; color: #666; margin-bottom: 40px;">Choose your preferred signing package</p>
     
-    <div class="products-grid" id="productsGrid">
-      <!-- Product 1: Expo Regular Meet & Greet Bundle -->
-      <div class="product-card" data-category="meet-greet" data-price="299">
+    <!-- First Row - 2 Centered Products -->
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(300px, 400px)); gap: 30px; justify-content: center; margin-bottom: 40px;">
+      <!-- Product 1: Regular Item Autograph -->
+      <div class="product-card" data-category="meet-greet" data-price="75">
         <div style="position: relative;">
-          <img src="images/expo-regular-meet-greet-bundle.jpg" alt="Expo Regular Meet & Greet Bundle" class="product-image">
-          <span class="product-badge">POPULAR</span>
+          <img src="images/expo-regular-meet-greet-bundle.jpg" alt="Regular Meet & Greet Bundle" class="product-image">
         </div>
         <div class="product-info">
-          <h3 class="product-title">Expo Regular Meet & Greet Bundle</h3>
-          <p class="product-description">Complete meet & greet experience with photo opportunity and one item signed. Includes exclusive event poster.</p>
-          <div class="product-price">
-            <span class="original-price">$399</span>
-            $299
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3 class="product-title" style="margin: 0;">Regular Item Autograph</h3>
+            <span style="color: #1e40af; font-weight: bold; font-size: 18px;">$75</span>
           </div>
+          <ul class="product-features">
+            <li>Up to 16x20 Photos</li>
+            <li>Pucks</li>
+            <li>Cards</li>
+          </ul>
+          
+          <!-- Custom Inscription Option -->
+          <div style="background: #f0f4ff; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #cbd5e1;">
+            <label style="display: flex; flex-direction: column; cursor: pointer;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer;" onchange="this.parentElement.parentElement.nextElementSibling.style.display = this.checked ? 'block' : 'none'">
+                  <div>
+                    <div style="font-weight: 600; color: #1e293b;">Add Custom Inscription</div>
+                    <div style="font-size: 14px; color: #64748b; margin-top: 2px;">Personalized inscription service</div>
+                  </div>
+                </div>
+                <span style="color: #1e40af; font-weight: bold; font-size: 16px;">+$25</span>
+              </div>
+              <div style="display: none; margin-top: 12px;">
+                <input type="text" placeholder="Inscription Text (Max 4 Words or 25 Characters)" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;" maxlength="25">
+              </div>
+            </label>
+          </div>
+          
           <div class="product-actions">
-            <button class="btn-add-to-cart" onclick="addToCart('Expo Regular Meet & Greet Bundle', 299, 'images/expo-regular-meet-greet-bundle.jpg')">Add to Cart</button>
-            <button class="btn-quick-view" onclick="quickView('Expo Regular Meet & Greet Bundle')">
+            <button class="btn-add-to-cart" onclick="window.open('https://sportcardexpomontreal.com/en/tickets/', '_blank')">Shop Now</button>
+            <button class="btn-quick-view" onclick="quickView('Regular Meet & Greet Bundle')">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                 <circle cx="12" cy="12" r="3"></circle>
@@ -592,86 +492,45 @@
         </div>
       </div>
 
-      <!-- Product 2: Premium Send In Ticket -->
-      <div class="product-card" data-category="send-in" data-price="199">
+      <!-- Product 2: Premium Item Autograph -->
+      <div class="product-card" data-category="meet-greet" data-price="150">
         <div style="position: relative;">
-          <img src="images/premium-send-in-ticket.jpg" alt="Premium Send In Ticket" class="product-image">
-          <span class="product-badge">PREMIUM</span>
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">Premium Send In Ticket</h3>
-          <p class="product-description">Send up to 3 items for signing. Includes authentication certificate and express return shipping.</p>
-          <div class="product-price">$199</div>
-          <div class="product-actions">
-            <button class="btn-add-to-cart" onclick="addToCart('Premium Send In Ticket', 199, 'images/premium-send-in-ticket.jpg')">Add to Cart</button>
-            <button class="btn-quick-view" onclick="quickView('Premium Send In Ticket')">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 3: Regular Send In Ticket -->
-      <div class="product-card" data-category="send-in" data-price="99">
-        <div style="position: relative;">
-          <img src="images/regular-send-in-ticket.jpg" alt="Regular Send In Ticket" class="product-image">
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">Regular Send In Ticket</h3>
-          <p class="product-description">Send 1 item for signing. Includes authentication certificate and standard return shipping.</p>
-          <div class="product-price">$99</div>
-          <div class="product-actions">
-            <button class="btn-add-to-cart" onclick="addToCart('Regular Send In Ticket', 99, 'images/regular-send-in-ticket.jpg')">Add to Cart</button>
-            <button class="btn-quick-view" onclick="quickView('Regular Send In Ticket')">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 4: Inscription Ticket -->
-      <div class="product-card" data-category="inscription" data-price="149">
-        <div style="position: relative;">
-          <img src="images/inscription-ticket.jpg" alt="Inscription Ticket" class="product-image">
-          <span class="product-badge">LIMITED</span>
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">Inscription Ticket</h3>
-          <p class="product-description">Add a personalized inscription to your item. Perfect for special messages or stats. Up to 20 words.</p>
-          <div class="product-price">$149</div>
-          <div class="product-actions">
-            <button class="btn-add-to-cart" onclick="addToCart('Inscription Ticket', 149, 'images/inscription-ticket.jpg')">Add to Cart</button>
-            <button class="btn-quick-view" onclick="quickView('Inscription Ticket')">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 5: VIP Meet & Greet Experience -->
-      <div class="product-card" data-category="meet-greet" data-price="499">
-        <div style="position: relative;">
+          <!-- Popular Badge -->
+          <span style="position: absolute; top: 10px; right: 10px; background: linear-gradient(to bottom, rgba(255,255,255,0.15), #ef4444); color: white; padding: 6px 14px; border-radius: 5px; font-size: 12px; font-weight: 600; z-index: 10; text-transform: uppercase; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">Popular</span>
           <img src="images/expo-regular-meet-greet-bundle-1.jpg" alt="VIP Meet & Greet Experience" class="product-image">
-          <span class="product-badge">VIP</span>
         </div>
         <div class="product-info">
-          <h3 class="product-title">VIP Meet & Greet Experience</h3>
-          <p class="product-description">Ultimate fan experience with private meet & greet, professional photo session, and up to 3 items signed.</p>
-          <div class="product-price">
-            <span class="original-price">$599</span>
-            $499
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3 class="product-title" style="margin: 0;">Premium Item Autograph</h3>
+            <span style="color: #1e40af; font-weight: bold; font-size: 18px;">$150</span>
           </div>
+          <ul class="product-features">
+            <li>Jerseys</li>
+            <li>Equipment</li>
+            <li>Oversized Photos</li>
+          </ul>
+          
+          <!-- Custom Inscription Option -->
+          <div style="background: #f0f4ff; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #cbd5e1;">
+            <label style="display: flex; flex-direction: column; cursor: pointer;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer;" onchange="this.parentElement.parentElement.nextElementSibling.style.display = this.checked ? 'block' : 'none'">
+                  <div>
+                    <div style="font-weight: 600; color: #1e293b;">Add Custom Inscription</div>
+                    <div style="font-size: 14px; color: #64748b; margin-top: 2px;">Personalized inscription service</div>
+                  </div>
+                </div>
+                <span style="color: #1e40af; font-weight: bold; font-size: 16px;">+$25</span>
+              </div>
+              <div style="display: none; margin-top: 12px;">
+                <input type="text" placeholder="Inscription Text (Max 4 Words or 25 Characters)" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;" maxlength="25">
+              </div>
+            </label>
+          </div>
+          
           <div class="product-actions">
-            <button class="btn-add-to-cart" onclick="addToCart('VIP Meet & Greet Experience', 499, 'images/expo-regular-meet-greet-bundle-1.jpg')">Add to Cart</button>
+            <button class="btn-add-to-cart" onclick="window.open('https://sportcardexpomontreal.com/en/tickets/', '_blank')">Shop Now</button>
             <button class="btn-quick-view" onclick="quickView('VIP Meet & Greet Experience')">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -681,19 +540,50 @@
           </div>
         </div>
       </div>
-
-      <!-- Product 6: Photo Opportunity Only -->
-      <div class="product-card" data-category="meet-greet" data-price="79">
+    </div>
+    
+    <!-- Second Row - 2 Centered Products -->
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(300px, 400px)); gap: 30px; justify-content: center; margin-top: 40px;">
+      <!-- Product 3: Montreal Expo Bundle -->
+      <div class="product-card" data-category="expo-bundle" data-price="300">
         <div style="position: relative;">
-          <img src="images/mobile-square.jpg" alt="Photo Opportunity Only" class="product-image">
+          <img src="images/expo-regular-meet-greet-bundle.jpg" alt="Montreal Expo Bundle" class="product-image">
         </div>
         <div class="product-info">
-          <h3 class="product-title">Photo Opportunity Only</h3>
-          <p class="product-description">Professional photo with Seranthony Dominguez. Digital copy included. No autograph.</p>
-          <div class="product-price">$79</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3 class="product-title" style="margin: 0;">Montreal Expo Bundle</h3>
+            <span style="color: #1e40af; font-weight: bold; font-size: 18px;">$300</span>
+          </div>
+          <ul class="product-features">
+            <li>1 Regular Item Ticket</li>
+            <li>1 Premium Item Ticket</li>
+            <li>1 Inscription Ticket</li>
+            <li>1 Fast Pass Ticket</li>
+            <li>1 Noah Dobson Framed Canvas</li>
+          </ul>
+          
+          <!-- Custom Inscription Option -->
+          <div style="background: #f0f4ff; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #cbd5e1;">
+            <label style="display: flex; flex-direction: column; cursor: pointer;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer;" onchange="this.parentElement.parentElement.nextElementSibling.style.display = this.checked ? 'block' : 'none'">
+                  <div>
+                    <div style="font-weight: 600; color: #1e293b;">Add Custom Inscription</div>
+                    <div style="font-size: 14px; color: #64748b; margin-top: 2px;">Personalized inscription service</div>
+                  </div>
+                </div>
+                <span style="color: #1e40af; font-weight: bold; font-size: 16px;">+$25</span>
+              </div>
+              <div style="display: none; margin-top: 12px;">
+                <input type="text" placeholder="Inscription Text (Max 4 Words or 25 Characters)" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;" maxlength="25">
+              </div>
+            </label>
+          </div>
+          
           <div class="product-actions">
-            <button class="btn-add-to-cart" onclick="addToCart('Photo Opportunity Only', 79, 'images/mobile-square.jpg')">Add to Cart</button>
-            <button class="btn-quick-view" onclick="quickView('Photo Opportunity Only')">
+            <button class="btn-add-to-cart" onclick="window.open('https://sportcardexpomontreal.com/en/tickets/', '_blank')">Shop Now</button>
+            <button class="btn-quick-view" onclick="quickView('Montreal Expo Bundle')">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                 <circle cx="12" cy="12" r="3"></circle>
@@ -703,40 +593,51 @@
         </div>
       </div>
 
-      <!-- Product 7: Combo Package -->
-      <div class="product-card" data-category="meet-greet" data-price="399">
+      <!-- Product 4: Private VIP Meet & Greet -->
+      <div class="product-card" data-category="vip-meet-greet" data-price="650">
         <div style="position: relative;">
-          <img src="images/mockup.jpg" alt="Combo Package" class="product-image">
-          <span class="product-badge">BEST VALUE</span>
+          <!-- Popular Badge -->
+          <span style="position: absolute; top: 10px; right: 10px; background: linear-gradient(to bottom, rgba(255,255,255,0.15), #ef4444); color: white; padding: 6px 14px; border-radius: 5px; font-size: 12px; font-weight: 600; z-index: 10; text-transform: uppercase; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">Popular</span>
+          <img src="images/expo-regular-meet-greet-bundle-1.jpg" alt="Private VIP Meet & Greet" class="product-image">
         </div>
         <div class="product-info">
-          <h3 class="product-title">Combo Package - Meet & Send</h3>
-          <p class="product-description">Meet & greet plus send-in option. Get one item signed in person and send another for signing later.</p>
-          <div class="product-price">$399</div>
-          <div class="product-actions">
-            <button class="btn-add-to-cart" onclick="addToCart('Combo Package - Meet & Send', 399, 'images/mockup.jpg')">Add to Cart</button>
-            <button class="btn-quick-view" onclick="quickView('Combo Package')">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-            </button>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3 class="product-title" style="margin: 0;">Private VIP Meet & Greet</h3>
+            <span style="color: #1e40af; font-weight: bold; font-size: 18px;">$650</span>
           </div>
-        </div>
-      </div>
-
-      <!-- Product 8: Team Photo Signing -->
-      <div class="product-card" data-category="inscription" data-price="249">
-        <div style="position: relative;">
-          <img src="images/website.jpg" alt="Team Photo Signing" class="product-image">
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">Team Photo Signing</h3>
-          <p class="product-description">Official Phillies team photo signed by Seranthony. Limited edition 16x20 print with COA.</p>
-          <div class="product-price">$249</div>
+          <ul class="product-features">
+            <li>2 Additional Guests</li>
+            <li>1 Regular Item Ticket</li>
+            <li>1 Premium Item Ticket</li>
+            <li>2 Inscription Tickets</li>
+            <li>1 Fast Pass Ticket</li>
+            <li>1 Noah Dobson Framed Canvas</li>
+            <li>1 Canadiens Fanatics Premium Jersey</li>
+            <li>1 Printed Photo-Op w/ Noah Dobson</li>
+          </ul>
+          
+          <!-- Custom Inscription Option -->
+          <div style="background: #f0f4ff; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #cbd5e1;">
+            <label style="display: flex; flex-direction: column; cursor: pointer;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer;" onchange="this.parentElement.parentElement.nextElementSibling.style.display = this.checked ? 'block' : 'none'">
+                  <div>
+                    <div style="font-weight: 600; color: #1e293b;">Add Custom Inscription</div>
+                    <div style="font-size: 14px; color: #64748b; margin-top: 2px;">Personalized inscription service</div>
+                  </div>
+                </div>
+                <span style="color: #1e40af; font-weight: bold; font-size: 16px;">+$25</span>
+              </div>
+              <div style="display: none; margin-top: 12px;">
+                <input type="text" placeholder="Inscription Text (Max 4 Words or 25 Characters)" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;" maxlength="25">
+              </div>
+            </label>
+          </div>
+          
           <div class="product-actions">
-            <button class="btn-add-to-cart" onclick="addToCart('Team Photo Signing', 249, 'images/website.jpg')">Add to Cart</button>
-            <button class="btn-quick-view" onclick="quickView('Team Photo Signing')">
+            <button class="btn-add-to-cart" onclick="window.open('https://sportcardexpomontreal.com/en/tickets/', '_blank')">Shop Now</button>
+            <button class="btn-quick-view" onclick="quickView('Private VIP Meet & Greet')">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                 <circle cx="12" cy="12" r="3"></circle>
@@ -749,235 +650,327 @@
   </div>
 </section>
 
-<!-- Cart Drawer -->
-<div class="cart-drawer" id="cartDrawer">
-  <div class="cart-header">
-    <h3>Shopping Cart</h3>
-    <span class="cart-close" onclick="toggleCart()">&times;</span>
-  </div>
-  <div class="cart-items" id="cartItems">
-    <p style="text-align: center; color: #999;">Your cart is empty</p>
-  </div>
-  <div class="cart-footer">
-    <div class="cart-total">
-      <span>Total:</span>
-      <span id="cartTotal">$0.00</span>
-    </div>
-    <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
-  </div>
-</div>
-
-<!-- Overlay -->
-<div class="overlay" id="overlay" onclick="toggleCart()"></div>
-
-<script>
-  // Cart functionality
-  let cart = [];
-  let isCartOpen = false;
-
-  function addToCart(name, price, image) {
-    const existingItem = cart.find(item => item.name === name);
+<!-- Send-In Options Section -->
+<section class="products-section" id="send-in" style="background-color: #fafafa;">
+  <div class="container">
+    <h2 style="font-size: 32px; margin-bottom: 10px; text-align: center;">Available Send-In Options (Frameworth)</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 40px;">Ship your items to us for professional signing</p>
     
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      cart.push({
-        name: name,
-        price: price,
-        image: image,
-        quantity: 1
-      });
-    }
-    
-    updateCart();
-    showNotification('Item added to cart!');
-    
-    // Open cart drawer
-    if (!isCartOpen) {
-      toggleCart();
-    }
-  }
-
-  function updateCart() {
-    const cartCount = document.getElementById('cartCount');
-    const cartItems = document.getElementById('cartItems');
-    const cartTotal = document.getElementById('cartTotal');
-    
-    // Update cart count
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems;
-    
-    // Update cart items display
-    if (cart.length === 0) {
-      cartItems.innerHTML = '<p style="text-align: center; color: #999;">Your cart is empty</p>';
-    } else {
-      cartItems.innerHTML = cart.map(item => `
-        <div class="cart-item">
-          <img src="${item.image}" alt="${item.name}">
-          <div class="cart-item-info">
-            <div class="cart-item-title">${item.name}</div>
-            <div class="cart-item-price">$${item.price}</div>
-            <div class="cart-item-quantity">
-              <button class="quantity-btn" onclick="updateQuantity('${item.name}', -1)">-</button>
-              <span>${item.quantity}</span>
-              <button class="quantity-btn" onclick="updateQuantity('${item.name}', 1)">+</button>
-            </div>
-          </div>
-          <span style="cursor: pointer;" onclick="removeFromCart('${item.name}')">&times;</span>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
+      <!-- Send-In Product 1: Regular Send In Ticket -->
+      <div class="product-card" data-category="send-in" data-price="99">
+        <div style="position: relative;">
+          <img src="images/regular-send-in-ticket.jpg" alt="Regular Send In Ticket" class="product-image">
         </div>
-      `).join('');
-    }
-    
-    // Update total
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    cartTotal.textContent = `$${total.toFixed(2)}`;
-  }
+        <div class="product-info">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3 class="product-title" style="margin: 0;">Send-In Regular Items</h3>
+            <span style="color: #1e40af; font-weight: bold; font-size: 18px;">$99</span>
+          </div>
+          <ul class="product-features">
+            <li>Hockey cards</li>
+            <li>Pucks</li>
+            <li>Photos (8x10 or smaller)</li>
+            <li>Mini helmets</li>
+            <li>Authentication certificate included</li>
+          </ul>
+          
+          <!-- Custom Inscription Option -->
+          <div style="background: #f0f4ff; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #cbd5e1;">
+            <label style="display: flex; flex-direction: column; cursor: pointer;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer;" onchange="this.parentElement.parentElement.nextElementSibling.style.display = this.checked ? 'block' : 'none'">
+                  <div>
+                    <div style="font-weight: 600; color: #1e293b;">Add Custom Inscription</div>
+                    <div style="font-size: 14px; color: #64748b; margin-top: 2px;">Personalized inscription service</div>
+                  </div>
+                </div>
+                <span style="color: #1e40af; font-weight: bold; font-size: 16px;">+$25</span>
+              </div>
+              <div style="display: none; margin-top: 12px;">
+                <input type="text" placeholder="Inscription Text (Max 4 Words or 25 Characters)" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;" maxlength="25">
+              </div>
+            </label>
+          </div>
+          
+          <div class="product-actions">
+            <button class="btn-add-to-cart" onclick="">Request Send In</button>
+          </div>
+        </div>
+      </div>
 
-  function updateQuantity(name, change) {
-    const item = cart.find(item => item.name === name);
-    if (item) {
-      item.quantity += change;
-      if (item.quantity <= 0) {
-        removeFromCart(name);
-      } else {
-        updateCart();
-      }
-    }
-  }
+      <!-- Send-In Product 2: Premium Send In Ticket -->
+      <div class="product-card" data-category="send-in" data-price="199">
+        <div style="position: relative;">
+          <!-- Popular Badge -->
+          <span style="position: absolute; top: 10px; right: 10px; background: linear-gradient(to bottom, rgba(255,255,255,0.15), #ef4444); color: white; padding: 6px 14px; border-radius: 5px; font-size: 12px; font-weight: 600; z-index: 10; text-transform: uppercase; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">Popular</span>
+          <img src="images/premium-send-in-ticket.jpg" alt="Premium Send In Ticket" class="product-image">
+        </div>
+        <div class="product-info">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3 class="product-title" style="margin: 0;">Send-In Premium Items</h3>
+            <span style="color: #1e40af; font-weight: bold; font-size: 18px;">$199</span>
+          </div>
+          <ul class="product-features">
+            <li>Jerseys</li>
+            <li>Full-size helmets</li>
+            <li>Hockey sticks</li>
+            <li>Hockey gloves</li>
+            <li>Large photos (11x14 or larger)</li>
+            <li>Authentication certificate included</li>
+          </ul>
+          
+          <!-- Custom Inscription Option -->
+          <div style="background: #f0f4ff; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #cbd5e1;">
+            <label style="display: flex; flex-direction: column; cursor: pointer;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer;" onchange="this.parentElement.parentElement.nextElementSibling.style.display = this.checked ? 'block' : 'none'">
+                  <div>
+                    <div style="font-weight: 600; color: #1e293b;">Add Custom Inscription</div>
+                    <div style="font-size: 14px; color: #64748b; margin-top: 2px;">Personalized inscription service</div>
+                  </div>
+                </div>
+                <span style="color: #1e40af; font-weight: bold; font-size: 16px;">+$25</span>
+              </div>
+              <div style="display: none; margin-top: 12px;">
+                <input type="text" placeholder="Inscription Text (Max 4 Words or 25 Characters)" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;" maxlength="25">
+              </div>
+            </label>
+          </div>
+          
+          <div class="product-actions">
+            <button class="btn-add-to-cart" onclick="">Request Send In</button>
+          </div>
+        </div>
+      </div>
 
-  function removeFromCart(name) {
-    cart = cart.filter(item => item.name !== name);
-    updateCart();
-  }
-
-  function toggleCart() {
-    const cartDrawer = document.getElementById('cartDrawer');
-    const overlay = document.getElementById('overlay');
+      <!-- Send-In Product 3: Send-In Inscription -->
+      <div class="product-card" data-category="send-in-inscription" data-price="25">
+        <div style="position: relative;">
+          <img src="images/inscription-ticket.jpg" alt="Send-In Inscription" class="product-image">
+        </div>
+        <div class="product-info">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3 class="product-title" style="margin: 0;">Send-In Inscription</h3>
+            <span style="color: #1e40af; font-weight: bold; font-size: 18px;">$25</span>
+          </div>
+          <ul class="product-features">
+            <li>Must be paired with Regular/Premium item ticket</li>
+            <li>Personalized inscription on your item</li>
+            <li>Perfect for stats, dates, or messages</li>
+            <li>Max 4 words or 25 characters</li>
+          </ul>
+        </div>
+      </div>
+    </div>
     
-    isCartOpen = !isCartOpen;
-    
-    if (isCartOpen) {
-      cartDrawer.classList.add('open');
-      overlay.classList.add('show');
-    } else {
-      cartDrawer.classList.remove('open');
-      overlay.classList.remove('show');
-    }
-  }
-
-  function checkout() {
-    if (cart.length === 0) {
-      alert('Your cart is empty!');
-      return;
-    }
-    
-    // In a real implementation, this would integrate with Shopify's checkout
-    alert('Redirecting to Shopify checkout...');
-    
-    // For Shopify integration:
-    // window.location.href = '/cart';
-  }
-
-  // Filter functionality
-  function filterProducts(category) {
-    const products = document.querySelectorAll('.product-card');
-    const tabs = document.querySelectorAll('.filter-tab');
-    
-    // Update active tab
-    tabs.forEach(tab => {
-      tab.classList.remove('active');
-      if (tab.textContent.toLowerCase().includes(category) || 
-          (category === 'all' && tab.textContent === 'All Products')) {
-        tab.classList.add('active');
-      }
-    });
-    
-    // Filter products
-    products.forEach(product => {
-      if (category === 'all') {
-        product.style.display = 'block';
-      } else {
-        const productCategory = product.getAttribute('data-category');
-        product.style.display = productCategory === category ? 'block' : 'none';
-      }
-    });
-  }
-
-  // Sort functionality
-  function sortProducts(sortBy) {
-    const grid = document.getElementById('productsGrid');
-    const products = Array.from(grid.children);
-    
-    products.sort((a, b) => {
-      const priceA = parseInt(a.getAttribute('data-price'));
-      const priceB = parseInt(b.getAttribute('data-price'));
+    <!-- Send-In Service Info -->
+    <div class="info-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; max-width: 1200px; margin: 40px auto 0;">
       
-      switch(sortBy) {
-        case 'price-low':
-          return priceA - priceB;
-        case 'price-high':
-          return priceB - priceA;
-        default:
-          return 0;
-      }
-    });
+      <!-- How It Works -->
+      <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; border: 2px solid #e5e7eb;">
+        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+          <span style="font-size: 24px; margin-right: 10px;">📋</span>
+          <h3 style="font-size: 18px; font-weight: 600; margin: 0;">How It Works</h3>
+        </div>
+        <ol style="padding-left: 20px; margin: 0; font-size: 14px; line-height: 1.8; color: #555;">
+          <li>Purchase send-in service</li>
+          <li>Pack with bubble wrap; include printed order confirmation</li>
+          <li>Download the form</li>
+          <li>Mail item with form</li>
+          <li>We get it signed</li>
+          <li>Ships back in 2 weeks</li>
+        </ol>
+      </div>
+      
+      <!-- Important Dates -->
+      <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; border: 2px solid #e5e7eb;">
+        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+          <span style="font-size: 24px; margin-right: 10px;">📅</span>
+          <h3 style="font-size: 18px; font-weight: 600; margin: 0;">Important Dates</h3>
+        </div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8; color: #555;">
+          <li>• <strong>Signing Date:</strong> Sunday, October 5, 2025</li>
+          <li>• <strong>Must arrive by:</strong> Sept 25th</li>
+          <li>• <strong>Send-In Deadline:</strong> ~10-14 days before event</li>
+          <li>• <strong>Cutoff for inscriptions:</strong> Same as send-in deadline</li>
+        </ul>
+      </div>
+      
+      <!-- Guidelines -->
+      <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; border: 2px solid #e5e7eb;">
+        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+          <span style="font-size: 24px; margin-right: 10px;">⚠️</span>
+          <h3 style="font-size: 18px; font-weight: 600; margin: 0;">Guidelines</h3>
+        </div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8; color: #555;">
+          <li>• Max 2 items per customer</li>
+          <li>• Insurance recommended</li>
+          <li>• If marker color chosen → mark item with sticky note</li>
+          <li>• Outside of Box: NOAH DOBSON SEND-IN - [ORDER #]</li>
+        </ul>
+      </div>
+      
+      <!-- Shipping Address -->
+      <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; border: 2px solid #e5e7eb;">
+        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+          <span style="font-size: 24px; margin-right: 10px;">⚡</span>
+          <h3 style="font-size: 18px; font-weight: 600; margin: 0;">Shipping Address</h3>
+        </div>
+        <div style="font-size: 14px; line-height: 1.8; color: #555;">
+          <p style="margin: 0;"><strong>Ship to:</strong></p>
+          <a href="https://www.google.com/maps/place/Frameworth+Sports+Marketing/@43.7182893,-79.4685945,17z/data=!3m1!4b1!4m6!3m5!1s0x882b33d66e44874f:0x9a92372e2778d248!8m2!3d43.7182893!4d-79.4685945!16s%2Fg%2F11b6bmstml?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="text-decoration: underline; color: #7c3aed;">
+            <p style="margin: 0;">Frameworth Sports</p>
+            <p style="margin: 0;">Attn: Noah Dobson</p>
+            <p style="margin: 0;">11988 Caledonia Rd</p>
+            <p style="margin: 0;">North York, ON</p>
+            <p style="margin: 0;">M6A 2W5</p>
+          </a>
+        </div>
+      </div>
+    </div>
     
-    // Re-append sorted products
-    products.forEach(product => grid.appendChild(product));
-  }
+    <!-- Required Form - Centered Below -->
+    <div style="display: flex; justify-content: center; margin: 30px auto 0;">
+      
+      <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; border: 2px solid #e5e7eb; width: 320px;">
+        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+          <span style="font-size: 24px; margin-right: 10px;">📄</span>
+          <h3 style="font-size: 18px; font-weight: 600; margin: 0;">Required Form</h3>
+        </div>
+        <p style="font-size: 14px; color: #555; margin: 0 0 15px 0;">Include with shipment</p>
+        
+        <button onclick="window.open('https://cdn.shopify.com/s/files/1/0568/9275/2041/files/SEND_IN_FORM.pdf?v=1727899786', '_blank'); var link = document.createElement('a'); link.href = 'https://cdn.shopify.com/s/files/1/0568/9275/2041/files/SEND_IN_FORM.pdf?v=1727899786'; link.download = 'SEND_IN_FORM.pdf'; link.click();" style="width: 100%; padding: 12px; background: #1e40af; color: white; border: none; border-radius: 5px; font-size: 14px; font-weight: 600; cursor: pointer; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+          <span style="margin-right: 8px;">⬇</span> Download PDF
+        </button>
+        
+        <button onclick="window.open('https://cdn.shopify.com/s/files/1/0568/9275/2041/files/SEND_IN_FORM.pdf?v=1727899786', '_blank')" style="width: 100%; padding: 12px; background: white; color: #1e40af; border: 2px solid #1e40af; border-radius: 5px; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <span style="margin-right: 8px;">👁</span> View Form
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
-  // Quick view functionality
-  function quickView(productName) {
-    alert(`Quick view for: ${productName}\n\nThis would open a modal with more product details.`);
-  }
-
-  // Mobile menu toggle
-  function toggleMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-  }
-
-  // Notification system
-  function showNotification(message) {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #000;
-      color: white;
-      padding: 15px 20px;
-      border-radius: 5px;
-      z-index: 10000;
-      animation: slideIn 0.3s ease;
-    `;
-    notification.textContent = message;
+<!-- FAQ Section -->
+<section class="faq-section" id="faq" style="background-color: #f9fafb; padding: 80px 0;">
+  <div class="container">
+    <h2 style="font-size: 36px; text-align: center; margin-bottom: 20px;">Frequently Asked Questions</h2>
+    <p style="text-align: center; color: #6b7280; margin-bottom: 60px;">Find answers to common questions about the signing event</p>
     
-    document.body.appendChild(notification);
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
+      <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">What items can be signed?</h3>
+        <p style="color: #6b7280; line-height: 1.5; font-size: 15px;">Noah Dobson will sign jerseys, baseballs, photos, bats, helmets, and most sports memorabilia. Items must fit within size restrictions for each ticket type.</p>
+      </div>
+      
+      <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">Can I bring my own items?</h3>
+        <p style="color: #6b7280; line-height: 1.5; font-size: 15px;">Yes! You can bring your own items to be signed. Each ticket allows for one item to be signed at the event.</p>
+      </div>
+      
+      <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">Is authentication included?</h3>
+        <p style="color: #6b7280; line-height: 1.5; font-size: 15px;">Yes, all signed items include a Certificate of Authenticity and hologram verification.</p>
+      </div>
+    </div>
     
-    // Remove after 3 seconds
-    setTimeout(() => {
-      notification.remove();
-    }, 3000);
-  }
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 30px auto;">
+      <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">Can Noah refuse an inscription?</h3>
+        <p style="color: #6b7280; line-height: 1.5; font-size: 15px;">Yes.</p>
+      </div>
+      
+      <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">Refunds?</h3>
+        <p style="color: #6b7280; line-height: 1.5; font-size: 15px;">Tickets = ExpoCard policy. Send-Ins = Frameworth policy.</p>
+      </div>
+      
+      <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">Late arrivals?</h3>
+        <p style="color: #6b7280; line-height: 1.5; font-size: 15px;">Items may be returned unsigned.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  // Add animation styles
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes slideIn {
-      from {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
+<!-- Terms & Conditions Section -->
+<section class="terms-section" id="terms" style="background-color: white; padding: 80px 0;">
+  <div class="container" style="text-align: center;">
+    <h2 style="font-size: 36px; margin-bottom: 30px;">Send-In Service Terms & Conditions</h2>
+    <p style="color: #6b7280; max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">By purchasing our send-in signing service, you agree to our terms and conditions. Please review all policies regarding shipping, deadlines, and service limitations.</p>
+    
+    <a href="https://frameworth.com/pages/send-in-terms-and-conditions" target="_blank" style="display: inline-flex; align-items: center; color: #1e40af; text-decoration: none; font-weight: 600; font-size: 16px;">
+      Read Full Terms & Conditions 
+      <svg style="margin-left: 8px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- Trust Badges Section -->
+<section class="trust-section" style="background-color: #f9fafb; padding: 80px 0;">
+  <div class="container">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 80px; flex-wrap: wrap; text-align: center;">
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <div style="width: 40px; height: 40px; color: #1e40af; flex-shrink: 0;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 style="font-size: 16px; margin: 0 0 5px 0; font-weight: 600;">100% Authentic</h3>
+          <p style="color: #6b7280; margin: 0; font-size: 14px;">All items come with Certificate of Authenticity</p>
+        </div>
+      </div>
+      
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <div style="width: 40px; height: 40px; color: #1e40af; flex-shrink: 0;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="5" width="20" height="14" rx="2"/>
+            <line x1="2" y1="10" x2="22" y2="10"/>
+          </svg>
+        </div>
+        <div>
+          <h3 style="font-size: 16px; margin: 0 0 5px 0; font-weight: 600;">Secure Payment</h3>
+          <p style="color: #6b7280; margin: 0; font-size: 14px;">Safe and encrypted checkout process</p>
+        </div>
+      </div>
+      
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <div style="width: 40px; height: 40px; color: #1e40af; flex-shrink: 0;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <div>
+          <h3 style="font-size: 16px; margin: 0 0 5px 0; font-weight: 600;">Trusted Since 1992</h3>
+          <p style="color: #6b7280; margin: 0; font-size: 14px;">Over 30 years of authentic memorabilia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 1024px) {
+    .send-in-info-section .container > div {
+      grid-template-columns: repeat(2, 1fr) !important;
     }
-  `;
-  document.head.appendChild(style);
-</script>
+  }
+  
+  @media (max-width: 640px) {
+    .send-in-info-section .container > div {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+    }
+  }
+</style>
+
 
 </body>
 </html>
