@@ -341,20 +341,33 @@
       grid-template-columns: 1fr !important;
     }
 
-    /* Send-in Grid Mobile */
+    /* Send-in products - 2 column on tablet */
     section#send-in > div > div:first-of-type {
-      grid-template-columns: 1fr !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 15px;
     }
 
-    /* FAQ Grid Mobile */
-    section#faq .container > div {
-      grid-template-columns: 1fr !important;
+    /* Product card overflow fix */
+    .product-card {
+      overflow: visible;
     }
 
-    /* Info Sections Mobile */
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-features {
+      font-size: 13px;
+    }
+
+    .product-title {
+      font-size: 16px;
+    }
+
+    /* Info Sections Mobile - 2 per row */
     .info-grid {
-      grid-template-columns: 1fr !important;
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 15px;
     }
 
     .product-card {
@@ -403,6 +416,22 @@
 
     .product-features {
       font-size: 14px;
+    }
+
+    /* Send-in products - single column on phone */
+    section#send-in > div > div:first-of-type {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Info grid - single column on phone */
+    .info-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Adjust padding for small screens */
+    .info-grid > div,
+    section#faq .container > div > div {
+      padding: 15px !important;
     }
   }
   /* Navigation Menu */
@@ -695,6 +724,56 @@
             <p style="margin: 5px 0;">11988 Caledonia Rd</p>
             <p style="margin: 5px 0;">North York, ON</p>
             <p style="margin: 5px 0;">M6A 2W5</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Accordion View for Info -->
+    <div class="info-accordion">
+      <div class="info-item-accordion">
+        <button class="info-question" onclick="this.parentElement.classList.toggle('active')">
+          🏢 How It Works
+        </button>
+        <div class="info-answer">
+          <ol>
+            <li>Purchase send-in service</li>
+            <li>Pack with bubble wrap; include printed order confirmation</li>
+            <li>Download the form</li>
+            <li>Mail item with form</li>
+            <li>We get it signed</li>
+            <li>Ships back in 2 weeks</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="info-item-accordion">
+        <button class="info-question" onclick="this.parentElement.classList.toggle('active')">
+          ⚠️ Guidelines
+        </button>
+        <div class="info-answer">
+          <ul style="list-style: none; padding: 0;">
+            <li>• Max 2 items per customer</li>
+            <li>• Must arrive by <strong>Sept 25th</strong></li>
+            <li>• Insurance recommended</li>
+            <li>• If marker color chosen → mark item with sticky note</li>
+            <li>• Outside of Box: NOAH DOBSON SEND-IN - [ORDER #]</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="info-item-accordion">
+        <button class="info-question" onclick="this.parentElement.classList.toggle('active')">
+          ⚡ Shipping Address
+        </button>
+        <div class="info-answer">
+          <p><strong>Ship to:</strong></p>
+          <a href="https://www.google.com/maps/place/Frameworth+Sports+Marketing/@43.7182893,-79.4685945,17z/data=!3m1!4b1!4m6!3m5!1s0x882b33d66e44874f:0x9a92372e2778d248!8m2!3d43.7182893!4d-79.4685945!16s%2Fg%2F11b6bmstml?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="text-decoration: underline; color: #7c3aed;">
+            Frameworth Sports<br>
+            Attn: Noah Dobson<br>
+            11988 Caledonia Rd<br>
+            North York, ON<br>
+            M6A 2W5
           </a>
         </div>
       </div>

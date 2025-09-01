@@ -317,6 +317,85 @@
   }
 
 
+  /* Accordion Styles for Mobile */
+  .faq-accordion, .info-accordion {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .faq-accordion, .info-accordion {
+      display: block;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .faq-grid, .info-grid {
+      display: none !important;
+    }
+
+    .faq-item-accordion, .info-item-accordion {
+      background: white;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .faq-question, .info-question {
+      padding: 18px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      border: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .faq-question:after, .info-question:after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 300;
+      transition: transform 0.3s;
+    }
+
+    .faq-item-accordion.active .faq-question:after,
+    .info-item-accordion.active .info-question:after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer, .info-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 20px;
+    }
+
+    .faq-item-accordion.active .faq-answer,
+    .info-item-accordion.active .info-answer {
+      max-height: 500px;
+      padding: 0 20px 18px;
+    }
+
+    .faq-answer p, .info-answer p {
+      color: #6b7280;
+      line-height: 1.5;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .info-answer ol, .info-answer ul {
+      padding-left: 20px;
+      margin: 10px 0;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #555;
+    }
+  }
+
   /* Responsive Design */
   @media (max-width: 768px) {
     .hero-content h1 {
@@ -336,6 +415,36 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
+
+    /* Product card overflow fix */
+    .product-card {
+      overflow: visible;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-features {
+      font-size: 13px;
+    }
+
+    .product-title {
+      font-size: 16px;
+    }
+
+
+    /* Send-in products - 2 column on tablet */
+    section#send-in > div > div:first-of-type {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 15px;
+    }
+
+    /* Tickets - single column */
+    section#tickets > div > div:first-of-type,
+    section#tickets > div > div:nth-of-type(2) {
+      grid-template-columns: 1fr !important;
+    }
   }
 
   @media (max-width: 480px) {
@@ -345,6 +454,22 @@
 
     .send-in-grid {
       grid-template-columns: 1fr;
+    }
+
+    /* Send-in products - single column on phone */
+    section#send-in > div > div:first-of-type {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Info grid - single column on phone */
+    .info-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Adjust padding for small screens */
+    .info-grid > div,
+    section#faq .container > div > div {
+      padding: 15px !important;
     }
   }
   /* Navigation Menu */
@@ -656,7 +781,8 @@
     <h2 style="font-size: 32px; margin-bottom: 10px; text-align: center;">Available Send-In Options (Frameworth)</h2>
     <p style="text-align: center; color: #666; margin-bottom: 40px;">Ship your items to us for professional signing</p>
     
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
+    <!-- First Row - 2 Send-In Products -->
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 800px; margin: 0 auto 40px;">
       <!-- Send-In Product 1: Regular Send In Ticket -->
       <div class="product-card" data-category="send-in" data-price="99">
         <div style="position: relative;">
@@ -745,9 +871,12 @@
           </div>
         </div>
       </div>
-
+    </div>
+    
+    <!-- Second Row - Inscription Product -->
+    <div style="display: flex; justify-content: center; margin: 0 auto 40px;">
       <!-- Send-In Product 3: Send-In Inscription -->
-      <div class="product-card" data-category="send-in-inscription" data-price="25">
+      <div class="product-card" data-category="send-in-inscription" data-price="25" style="max-width: 400px;">
         <div style="position: relative;">
           <img src="images/inscription-ticket.jpg" alt="Send-In Inscription" class="product-image">
         </div>
@@ -832,6 +961,69 @@
       </div>
     </div>
     
+    <!-- Mobile Accordion View for Info -->
+    <div class="info-accordion">
+      <div class="info-item-accordion">
+        <button class="info-question" onclick="this.parentElement.classList.toggle('active')">
+          📋 How It Works
+        </button>
+        <div class="info-answer">
+          <ol>
+            <li>Purchase send-in service</li>
+            <li>Pack with bubble wrap; include printed order confirmation</li>
+            <li>Download the form</li>
+            <li>Mail item with form</li>
+            <li>We get it signed</li>
+            <li>Ships back in 2 weeks</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="info-item-accordion">
+        <button class="info-question" onclick="this.parentElement.classList.toggle('active')">
+          📅 Important Dates
+        </button>
+        <div class="info-answer">
+          <ul style="list-style: none; padding: 0;">
+            <li>• <strong>Signing Date:</strong> Sunday, October 5, 2025</li>
+            <li>• <strong>Must arrive by:</strong> Sept 25th</li>
+            <li>• <strong>Send-In Deadline:</strong> ~10-14 days before event</li>
+            <li>• <strong>Cutoff for inscriptions:</strong> Same as send-in deadline</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="info-item-accordion">
+        <button class="info-question" onclick="this.parentElement.classList.toggle('active')">
+          ⚠️ Guidelines
+        </button>
+        <div class="info-answer">
+          <ul style="list-style: none; padding: 0;">
+            <li>• Max 2 items per customer</li>
+            <li>• Insurance recommended</li>
+            <li>• If marker color not chosen = mark item with sticky note</li>
+            <li>• Outside of box NOAH DOBSON SEND-IN. ORDER #[order #]</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="info-item-accordion">
+        <button class="info-question" onclick="this.parentElement.classList.toggle('active')">
+          ⚡ Shipping Address
+        </button>
+        <div class="info-answer">
+          <p><strong>Ship to:</strong></p>
+          <a href="https://www.google.com/maps/place/Frameworth+Sports+Marketing/@43.7182893,-79.4685945,17z/data=!3m1!4b1!4m6!3m5!1s0x882b33d66e44874f:0x9a92372e2778d248!8m2!3d43.7182893!4d-79.4685945!16s%2Fg%2F11b6bmstml?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="text-decoration: underline; color: #7c3aed;">
+            Frameworth Sports<br>
+            Attn: Noah Dobson<br>
+            11988 Caledonia Rd<br>
+            North York, ON<br>
+            M6A 2W5
+          </a>
+        </div>
+      </div>
+    </div>
+    
     <!-- Required Form - Centered Below -->
     <div style="display: flex; justify-content: center; margin: 30px auto 0;">
       
@@ -860,7 +1052,8 @@
     <h2 style="font-size: 36px; text-align: center; margin-bottom: 20px;">Frequently Asked Questions</h2>
     <p style="text-align: center; color: #6b7280; margin-bottom: 60px;">Find answers to common questions about the signing event</p>
     
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
+    <!-- Desktop Grid View -->
+    <div class="faq-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
       <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
         <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">What items can be signed?</h3>
         <p style="color: #6b7280; line-height: 1.5; font-size: 15px;">Noah Dobson will sign jerseys, baseballs, photos, bats, helmets, and most sports memorabilia. Items must fit within size restrictions for each ticket type.</p>
@@ -877,7 +1070,7 @@
       </div>
     </div>
     
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 30px auto;">
+    <div class="faq-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 30px auto;">
       <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
         <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">Can Noah refuse an inscription?</h3>
         <p style="color: #6b7280; line-height: 1.5; font-size: 15px;">Yes.</p>
@@ -891,6 +1084,63 @@
       <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
         <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">Late arrivals?</h3>
         <p style="color: #6b7280; line-height: 1.5; font-size: 15px;">Items may be returned unsigned.</p>
+      </div>
+    </div>
+    
+    <!-- Mobile Accordion View -->
+    <div class="faq-accordion">
+      <div class="faq-item-accordion">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          What items can be signed?
+        </button>
+        <div class="faq-answer">
+          <p>Noah Dobson will sign jerseys, baseballs, photos, bats, helmets, and most sports memorabilia. Items must fit within size restrictions for each ticket type.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item-accordion">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          Can I bring my own items?
+        </button>
+        <div class="faq-answer">
+          <p>Yes! You can bring your own items to be signed. Each ticket allows for one item to be signed at the event.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item-accordion">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          Is authentication included?
+        </button>
+        <div class="faq-answer">
+          <p>Yes, all signed items include a Certificate of Authenticity and hologram verification.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item-accordion">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          Can Noah refuse an inscription?
+        </button>
+        <div class="faq-answer">
+          <p>Yes.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item-accordion">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          Refunds?
+        </button>
+        <div class="faq-answer">
+          <p>Tickets = ExpoCard policy. Send-Ins = Frameworth policy.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item-accordion">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          Late arrivals?
+        </button>
+        <div class="faq-answer">
+          <p>Items may be returned unsigned.</p>
+        </div>
       </div>
     </div>
   </div>
